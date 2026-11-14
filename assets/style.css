@@ -163,7 +163,3 @@ button:disabled{cursor:not-allowed}
   .content-container > .section-label { margin-top: 62px; margin-bottom: 20px; }
   .empty-state + .section-label { margin-top: 68px; }
 }
-
-  .content-container > .section-label { margin-top: 62px; margin-bottom: 20px; }
-  .empty-state + .section-label { margin-top: 68px; }
-}
