@@ -14,6 +14,20 @@
     {title:'Sobre Narielly Santos',type:'Autoria',path:'sobre/index.html',keywords:'autora estudante design tecnologia pensamento crítico'},
   ];
   const prefix=document.body.getAttribute('data-root')||'./';
+  // Links Início são absolutos no domínio publicado; a abertura local dos HTMLs continua possível.
+  const homeLinks=[...document.querySelectorAll('[data-home-link]')];
+  homeLinks.forEach(link=>{
+    if(location.protocol==='file:') link.href=prefix+'index.html';
+    link.addEventListener('click',event=>{
+      // Na própria home, Início sempre retorna ao topo em vez de manter o scroll nos artigos.
+      if(prefix==='./'){
+        event.preventDefault();
+        setMenu(false);
+        if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+        window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      }
+    });
+  });
   const setMenu=(open)=>{document.body.classList.toggle('nav-open',open);if(menuButton)menuButton.setAttribute('aria-expanded',String(open));};
   menuButton?.addEventListener('click',()=>setMenu(!document.body.classList.contains('nav-open')));
   nav?.querySelectorAll('a').forEach(x=>x.addEventListener('click',()=>setMenu(false)));
