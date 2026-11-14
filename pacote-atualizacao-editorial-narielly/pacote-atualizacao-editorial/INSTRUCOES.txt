@@ -1,0 +1,22 @@
+PACOTE DE ATUALIZACAO EDITORIAL — NARIELLY SANTOS
+
+Este pacote contém os três arquivos binários finais para substituir as imagens repetidas.
+
+1) Copie os três arquivos desta pasta assets/ para a pasta assets/ do repositório, mantendo os nomes.
+
+2) Atualize as referências no código:
+- index.html: imagem de destaque do artigo -> assets/article-silencio.webp
+- artigos/index.html:
+  * card “Além do agressor” -> ../assets/article-silencio.webp
+  * card do artigo sobre narcisismo parental -> ../assets/article-familia.webp
+- artigos/narcisismo-parental-autonomia-emocional/index.html:
+  * capa -> ../../assets/article-familia.webp
+- assets/style.css:
+  * .hero-art deve usar url("hero-editorial.webp")
+  * o hero da página “Além do agressor” deve usar url("article-silencio.webp")
+
+3) Não substitua outras imagens nem altere textos, estrutura ou navegação.
+
+4) Após integrar, conferir a página inicial, a listagem de artigos e as duas páginas de artigo; então criar commit em main e disparar a publicação de produção.
+
+Observação: este pacote entrega os binários, mas não altera por si só o repositório nem publica o site.
