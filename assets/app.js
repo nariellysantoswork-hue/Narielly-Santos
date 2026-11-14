@@ -34,9 +34,9 @@
   document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',async()=>{let url=window.location.href;try{await navigator.clipboard.writeText(url);const old=b.textContent;b.textContent='LINK COPIADO ✓';setTimeout(()=>b.textContent=old,2400);}catch(e){const temp=document.createElement('textarea');temp.value=url;document.body.append(temp);temp.select();try{document.execCommand('copy');b.textContent='LINK COPIADO ✓';}catch(e){b.textContent='COPIE O ENDEREÇO DO NAVEGADOR';}temp.remove();}}));
   const category=new URLSearchParams(location.search).get('tema');
   if(category && document.querySelector('[data-article-list]')){
-    const name={'sociedade':'Sociedade','comportamento':'Comportamento','tecnologia':'Tecnologia','educacao':'Educação','direitos-humanos':'Direitos humanos'}[category];
+    const name={'sociedade':'Sociedade','comportamento':'Comportamento','tecnologia':'Tecnologia','educacao':'Educação','direitos-humanos':'Direitos humanos','saude-mental':'Saúde mental','relacoes-familiares':'Relações familiares'}[category];
     const title=document.querySelector('[data-category-title]');if(title && name) title.textContent='Publicações em '+name;
-    const hasArticle=['sociedade','direitos-humanos','comportamento'].includes(category);
+    const hasArticle=['sociedade','direitos-humanos','comportamento','saude-mental','relacoes-familiares'].includes(category);
     document.querySelector('[data-article-list]').hidden=!hasArticle;
     const empty=document.querySelector('[data-empty-state]');if(empty)empty.hidden=hasArticle;
   }
