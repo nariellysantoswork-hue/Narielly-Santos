@@ -31,7 +31,7 @@ button:disabled{cursor:not-allowed}
 .icon-button svg{width:23px;height:23px;stroke-width:1.8}
 .mobile-menu{display:none}
 .home-hero{height:530px;position:relative;background:linear-gradient(90deg,#1a1a1a,#222);color:#fff;overflow:hidden}
-.hero-art{position:absolute;top:0;right:0;width:63%;height:100%;background-image:url('hero-portrait.webp');background-repeat:no-repeat;background-position:center 45%;background-size:cover;filter:grayscale(1)}
+.hero-art{position:absolute;top:0;right:0;width:63%;height:100%;background-image:url('hero-editorial.webp');background-repeat:no-repeat;background-position:center 45%;background-size:cover;filter:grayscale(1)}
 .home-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#181818 0%,#181818 28%,#181818e6 42%,#18181844 61%,transparent 82%)}
 .hero-inner{max-width:var(--max);margin:auto;padding:0 72px;height:100%;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 .eyebrow{font-size:12px;font-weight:500;letter-spacing:5px;text-transform:uppercase}
@@ -83,7 +83,7 @@ button:disabled{cursor:not-allowed}
 .inner-hero .inner-kicker{font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:#d7d7d7}
 .inner-hero h1{font-size:clamp(52px,7vw,93px);font-weight:850;letter-spacing:-4.5px;line-height:.96;margin:25px 0 22px;max-width:1000px}
 .inner-hero p{font-size:clamp(17px,1.8vw,22px);line-height:1.43;max-width:760px;margin:0;color:#dedede}
-.inner-hero .hero-image{position:absolute;inset:0 0 0 52%;background:url('feature-silhouette.webp') center/cover;opacity:.48;filter:grayscale(1)}
+.inner-hero .hero-image{position:absolute;inset:0 0 0 52%;background:url('article-silencio.webp') center/cover;opacity:.48;filter:grayscale(1)}
 .inner-hero:has(.hero-image)::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0b0b 36%,#0b0b0bb3 65%,#0b0b0b36);pointer-events:none}
 .inner-hero:has(.hero-image)>:not(.hero-image){position:relative;z-index:1}
 .content-container{width:min(calc(100% - 64px),1150px);margin:auto;padding:60px 0 100px}
