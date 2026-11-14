@@ -34,11 +34,19 @@
   document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',async()=>{let url=window.location.href;try{await navigator.clipboard.writeText(url);const old=b.textContent;b.textContent='LINK COPIADO ✓';setTimeout(()=>b.textContent=old,2400);}catch(e){const temp=document.createElement('textarea');temp.value=url;document.body.append(temp);temp.select();try{document.execCommand('copy');b.textContent='LINK COPIADO ✓';}catch(e){b.textContent='COPIE O ENDEREÇO DO NAVEGADOR';}temp.remove();}}));
   const category=new URLSearchParams(location.search).get('tema');
   if(category && document.querySelector('[data-article-list]')){
-    const name={'sociedade':'Sociedade','comportamento':'Comportamento','tecnologia':'Tecnologia','educacao':'Educação','direitos-humanos':'Direitos humanos','saude-mental':'Saúde mental','relacoes-familiares':'Relações familiares'}[category];
-    const title=document.querySelector('[data-category-title]');if(title && name) title.textContent='Publicações em '+name;
-    const hasArticle=['sociedade','direitos-humanos','comportamento','saude-mental','relacoes-familiares'].includes(category);
-    document.querySelector('[data-article-list]').hidden=!hasArticle;
-    const empty=document.querySelector('[data-empty-state]');if(empty)empty.hidden=hasArticle;
+    const names={'sociedade':'Sociedade','comportamento':'Comportamento','tecnologia':'Tecnologia','educacao':'Educação','direitos-humanos':'Direitos humanos','saude-mental':'Saúde mental','relacoes-familiares':'Relações familiares'};
+    const title=document.querySelector('[data-category-title]');
+    if(title && names[category]) title.textContent='Publicações em '+names[category];
+    const cards=[...document.querySelectorAll('[data-article-list] .article-list-card')];
+    let visible=0;
+    cards.forEach(card=>{
+      const categories=(card.dataset.categories||'').split(',').map(x=>x.trim());
+      const match=categories.includes(category);
+      card.hidden=!match;
+      if(match) visible++;
+    });
+    const empty=document.querySelector('[data-empty-state]');
+    if(empty) empty.hidden=visible>0;
   }
   document.querySelectorAll('[data-year]').forEach(x=>x.textContent=String(new Date().getFullYear()));
   document.querySelector('[data-compose]')?.addEventListener('submit',e=>{
