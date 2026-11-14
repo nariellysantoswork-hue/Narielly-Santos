@@ -66,8 +66,8 @@
   document.querySelector('[data-compose]')?.addEventListener('submit',e=>{
     e.preventDefault();let form=e.currentTarget;
     const assunto=form.elements['assunto'].value.trim();const mensagem=form.elements['mensagem'].value.trim();
-    const url='mailto:?subject='+encodeURIComponent(assunto||'Contato sobre o site Narielly Santos')+'&body='+encodeURIComponent(mensagem+'\n\nMensagem enviada pelo formulário do site.');
-    document.querySelector('[data-compose-feedback]').textContent='Seu aplicativo de e-mail será aberto. Adicione o endereço da destinatária antes de enviar.';
+    const url='mailto:falecom.nariellysantos@gmail.com?subject='+encodeURIComponent(assunto||'Contato sobre o site Narielly Santos')+'&body='+encodeURIComponent(mensagem+'\n\nMensagem enviada pelo formulário do site.');
+    document.querySelector('[data-compose-feedback]').textContent='Seu aplicativo de e-mail será aberto com o endereço de contato preenchido.';
     window.location.href=url;
   });
 })();
