@@ -8,6 +8,7 @@
   const searchOpen=[...document.querySelectorAll('[data-search-open]')];
   const searchClose=document.querySelector('[data-search-close]');
   const data=[
+    {title:'A dificuldade de personalização em filhos de pais narcisistas',type:'Ensaio teórico · Comportamento / Saúde mental / Relações familiares',path:'artigos/narcisismo-parental-autonomia-emocional/index.html',keywords:'narcisismo parental pais narcisistas individuação falso self autonomia emocional violência intrafamiliar saúde mental relações familiares alexitimia controle coercitivo'},
     {title:'Além do agressor: quem sustenta o silêncio diante da violência sexual?',type:'Ensaio · Sociedade / Direitos humanos / Gênero',path:'artigos/alem-do-agressor/index.html',keywords:'violência sexual conivência rede apoio agressores vítimas gênero cultura assédio importunação darvo'},
     {title:'Artigos e ensaios',type:'Índice de publicações',path:'artigos/index.html',keywords:'artigos ensaios publicações escrita sociedade comportamento tecnologia educação direitos humanos'},
     {title:'Pesquisas em desenvolvimento',type:'Projetos de pesquisa',path:'pesquisas/index.html',keywords:'pesquisa revisão integrativa silenciamento violência sexual'},
@@ -35,7 +36,7 @@
   if(category && document.querySelector('[data-article-list]')){
     const name={'sociedade':'Sociedade','comportamento':'Comportamento','tecnologia':'Tecnologia','educacao':'Educação','direitos-humanos':'Direitos humanos'}[category];
     const title=document.querySelector('[data-category-title]');if(title && name) title.textContent='Publicações em '+name;
-    const hasArticle=['sociedade','direitos-humanos'].includes(category);
+    const hasArticle=['sociedade','direitos-humanos','comportamento'].includes(category);
     document.querySelector('[data-article-list]').hidden=!hasArticle;
     const empty=document.querySelector('[data-empty-state]');if(empty)empty.hidden=hasArticle;
   }
